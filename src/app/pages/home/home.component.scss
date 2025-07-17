@@ -1,0 +1,122 @@
+.content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.welcome{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    width: 40%;
+    max-width: 80%;
+    opacity: 0;
+    animation:  FadeIn 1.8s ease-in-out forwards;
+}
+
+.text h1{
+    font-size: 50px;
+    margin-bottom: 0px;
+    color: #ffd100;
+}
+
+.text p{
+    font-size: 20px;
+    margin-top: 0px;
+    text-wrap: balance;
+    font-weight: 300;
+    color: #d3d2d2;
+}
+
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.logo i{
+    font-size: 300px;
+    opacity: 0;
+    animation:  FadeIn 1.8s ease-in-out forwards;
+}
+
+.p-button{
+    background-color: #e7c505;
+    border: none;
+    font-weight: 600;
+}
+
+.p-button:hover{
+    opacity: 0.8;
+    background-color: #e7c505;
+    border: none;
+}
+
+.separator{
+    margin-top: 10vh;
+}
+
+.grid{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card{
+    width: 30%;
+    height: 55vh;
+    background-color: #0f0f0f;
+    border-radius: 10px;
+}
+
+.img{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardImg{
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+}
+
+.title{
+    margin-left: 20px;
+    font-size: 20px;
+    color: #ffd100;
+}
+
+.skills{
+    margin-left: 20px;
+}
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.p-tag{
+    background-color: #222222;
+    color: white;
+}
