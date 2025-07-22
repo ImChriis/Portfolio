@@ -10,10 +10,11 @@
             <a>Habilidades</a>
             <a>Experiencia</a>
             <a>Contacto</a>
-
-            <div class="options">
-                <i class="pi pi-sun"></i>
-            </div>
+            
+        <div class="options" (click)="toggleTheme()" style="cursor:pointer">
+            <i *ngIf="!isDarkMode" class="pi pi-sun"></i>
+            <i *ngIf="isDarkMode" class="pi pi-moon"></i>
+        </div>
         </div>
     </nav>
 

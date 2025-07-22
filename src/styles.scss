@@ -19,3 +19,17 @@ app-root {
     flex-direction: column;
     min-height: 100vh; /* Ocupa toda la altura de la ventana */
 }
+
+:root{
+    --background-color: #1e2125;
+    --text-color: white;
+    --text-color-2: #d3d2d2;
+    --card: #292f38;
+}
+
+body.dark{
+    --background-color: #e5e5e5;
+    --text-color: black;
+    --text-color-2: rgb(73, 69, 69);
+    --card: #d3d4d6;
+}

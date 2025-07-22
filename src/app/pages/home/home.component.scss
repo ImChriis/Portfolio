@@ -1,10 +1,10 @@
 ::ng-deep{
     body{
-        background-color: #1e2125;
+        background-color: var(--background-color);
     }
     
     nav{
-        background-color: #1e2125;
+        background-color: var(--background-color);
     }
 }
 
@@ -39,7 +39,7 @@
 .text h1{
     font-size: 50px;
     margin-bottom: 0px;
-    color: #ffd100;
+    color: #e7c505;
 }
 
 .text p{
@@ -47,7 +47,23 @@
     margin-top: 0px;
     text-wrap: balance;
     font-weight: 300;
-    color: #d3d2d2;
+    color: var(--text-color-2);
+}
+
+.buttons{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttons i{
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-color);
+    &:hover{
+        opacity: 0.8;
+    }
 }
 
 .logo{
@@ -62,9 +78,11 @@ img{
 @keyframes FadeIn {
     from {
         opacity: 0;
+        transform: translateY(20px) scale(0.95)
     }
     to {
         opacity: 1;
+        transform: translateY(0) scale(1)
     }
 }
 
@@ -75,19 +93,20 @@ img{
 }
 
 .p-button{
-    background-color: #e7c505;
+    background-color: #e7c505 !important;
     border: none;
     font-weight: 600;
 }
 
 .p-button:hover{
     opacity: 0.8;
-    background-color: #e7c505;
+    background-color: #e7c505 !important;
     border: none;
 }
 
 .separator{
     margin-top: 10vh;
+    color: var(--text-color);
 }
 
 .grid{
@@ -100,10 +119,14 @@ img{
     gap: 20px;
 }
 
+.grid.fade-in {
+  animation: FadeIn 1.7s ease-in-out forwards;
+}
+
 .card{
     width: 30%;
     height: 60vh;
-    background-color: #292f38;
+    background-color: var(--card);
     border-radius: 10px;
 }
 
@@ -125,6 +148,7 @@ img{
     margin-left: 20px;
     font-size: 20px;
     color: #ffd100;
+    font-weight: bold;
     margin-bottom: 0px;
     height: 8%;
 }
@@ -133,6 +157,7 @@ img{
     margin-left: 20px;
     text-wrap: balance;
     margin-top: 0px;
+    color: var(--text-color);
 }
 
 .skills{
@@ -140,7 +165,7 @@ img{
 }
 
 .titleSkills{
-    color: white;
+    color: var(--text-color);
     font-weight: 300;
 }
 
@@ -159,13 +184,23 @@ img{
     width: 100%;
     height: 50vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    animation:  FadeIn 1.7s ease-in-out forwards;
+}
+
+.panels.fade-in {
+  animation: FadeIn 1.7s ease-in-out forwards;
+}
+
+.panels h1{
+    color: var(--text-color);
 }
 
 .left{
-    width: 50%;
+    width: 30%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -173,7 +208,7 @@ img{
 }
 
 .experience{
-    width: 55%;
+    width: 100%;
     height: 80%;
     background-color: #ffd100;
     color: black;
@@ -184,6 +219,8 @@ img{
     border-radius: 20px;
     text-wrap: balance;
     text-align: center;
+    transition: color 0.3s, transform 0.3s;
+    will-change: contents;
 }
 
 .experience h1{
@@ -193,6 +230,8 @@ img{
 
 .experience p{
     font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .mid p{
@@ -205,7 +244,7 @@ img{
 }
 
  .right{
-    width: 100%;
+    width: 90%;
     height: 50%;
     display: flex;
     align-items: center;
@@ -213,10 +252,111 @@ img{
     flex-direction: column;
  }
 
+ .tech{
+    width: 80%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+ }
+
+ .techTitle{
+    color: var(--text-color);
+ }
+
+ .tabs{
+    width: 100%;
+ }
+
+ .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+ }
+
+ .skill{
+    width: 10%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+ }
+
+ .skillImg{
+    width: 50%;
+    height: 30%;
+ }
+
+ .skill img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+ }
+
+ .skillTitle{
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+ }
+
+
+
+
+
 ::ng-deep{
     .p-timeline-event-marker::after{
         color: #ffd100;
         background-color: #ffd100 !important;
+        width: 100%;
     }
+
+    .p-timeline-event-content{
+        color: var(--text-color);
+    }
+
+    .p-tablist-tab-list{
+        background-color: transparent !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid var(--background-color) !important;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .p-tabpanels{
+        background-color: transparent !important;
+    }
+
+    .p-tab-active{
+        color: #ffd100 !important;
+    }
+
+    .p-tablist-active-bar{
+        background-color: #ffd100 !important;
+
+    }
+
+    .p-progressbar-value{
+        background-color: #ffd100 !important;
+    }
+
+    .p-tablist-active-bar,
+    .p-tabview-nav-active .p-tabview-nav-link,
+    .p-tabs .p-tablist-active-bar,
+    .p-tabs .p-tab-active {
+    color: #ffd100 !important;
+    border-color: #ffd100 !important;
+    transition: background 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s !important;
+  }
+    
 }
+
 

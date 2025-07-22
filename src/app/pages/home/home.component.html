@@ -4,7 +4,15 @@
             <h1>Ing. Christopher Medina</h1>
             <p>Full Stack Web Developer</p>
             <p>Como desarrollador full stack, me especializo en construir aplicaciones web robustas con el objetivo de desarrollar productos funcionales y de alta calidad</p>
-            <button pButton>Mis proyectos</button>
+           <div class="buttons">
+                <button pButton>Mis proyectos</button> 
+                <a href="https://github.com/ImChriis" target="_blank" rel="noopener">
+                    <i class="pi pi-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/imchriis/" target="_blank" rel="noopener">
+                    <i class="pi pi-linkedin"></i>
+                </a>
+           </div>
         </div>
 
         <!-- <div class="logo">
@@ -15,7 +23,7 @@
     <!-- proyectos -->
 
     <div class="separator">
-        <h1>Mis Proyectos</h1>
+        <h1>Proyectos</h1>
     </div>
 
     <div class="grid">
@@ -127,7 +135,7 @@
 
                     <p-tag>
                         <div class="flex items-center gap-2 px-1">
-                            <img alt="Angular" src="../../../assets/img/php.webp" class style="width: 20px" />
+                            <img alt="Angular" src="../../../assets/img/php.png" class style="width: 20px" />
                             <span class="text-base">
                                 PHP
                             </span>
@@ -324,31 +332,347 @@
 
     <!-- experiencia -->
 
-     <div class="separator">
-        <h1>Mi Experiencia</h1>
-    </div>
-
-    <div class="panels">
-        <div class="left">
+    <div class="panels" #experienceDiv [class.fade-in]="hasAnimated">
+         <h1>Empresas donde he trabajado</h1>
+        <!-- <div class="left">
             <div class="experience">
-            <h1>+2</h1>
-            <p>Años de experiencia</p>
+                <h1>+{{ animatedYears }}</h1>
+                <p>Años de experiencia</p>
+                <p>En el desarrollo de aplicaiones web robustas y de alta calidad</p>
             </div>
-        </div>
+        </div> -->
 
-        <div class="mid">
+        <!-- <div class="mid">
             <p>Más de 2 años de experiencia en el desarrollo de aplicaiones web robustas y de alta calidad</p>
-        </div>
+        </div> -->
 
         <div class="right">
-            <h1>Empresas donde he trabajado</h1>
-
-            <p-timeline [value]="works" class="w-full md:w-80" align="alternate">
+            <p-timeline [value]="works" layout="horizontal" class="w-full" align="alternate">
                 <ng-template #content let-works>
                     {{ works.name }} <br/>
                     {{ works.date }}
                 </ng-template>
             </p-timeline>
         </div>
+    </div>
+
+    <div class="techTitle">
+        <h1>Habilidades</h1>
+    </div>
+
+    <div class="tech">
+        <div class="tabs">
+    <p-tabs value="0">
+        <p-tablist>
+            <p-tab value="0">Todas</p-tab>
+            <p-tab value="1">FrontEnd</p-tab>
+            <p-tab value="2">BackEnd</p-tab>
+            <p-tab value="3">Otros</p-tab>
+        </p-tablist>
+        <p-tabpanels>
+            <p-tabpanel value="0">
+                <div class="icon">
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/html.webp" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>HTML</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/css.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>CSS</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/js.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>JavaScript</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/ts.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>TypeScript</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/angular.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>Angular</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/react.webp" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>React</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/Node.js.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>NodeJS</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/php.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>PHP</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/mysql.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>MySQL</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/sqlserver.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>SQL Server</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/git.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>Git</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/github.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>GitHub</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/gitlab.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>GitLab</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+                </div>
+            </p-tabpanel>
+            <p-tabpanel value="1">
+                <div class="icon">
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/html.webp" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>HTML</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/css.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>CSS</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/js.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>JavaScript</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/ts.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>TypeScript</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/angular.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>Angular</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/react.webp" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>React</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+                </div>
+            </p-tabpanel>
+            <p-tabpanel value="2">
+                <div class="icon">
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/Node.js.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>NodeJS</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/php.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>PHP</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/mysql.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>MySQL</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/sqlserver.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>SQL Server</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+                </div>
+            </p-tabpanel>
+            <p-tabpanel value="3">
+                <div class="icon">
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/git.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>Git</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                    
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/github.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>GitHub</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+
+                                        
+                    <div class="skill">
+                        <div class="skillImg">
+                            <img src="../../../assets/img/gitlab.png" alt="HTML">
+                        </div>
+
+                        <div class="skillTitle">
+                            <p>GitLab</p>
+                            <p-progressbar [value]="50" />
+                        </div>
+                    </div>
+                </div>
+            </p-tabpanel>
+        </p-tabpanels>
+    </p-tabs>
+</div>
     </div>
 </div>
