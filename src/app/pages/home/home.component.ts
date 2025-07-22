@@ -5,6 +5,8 @@ import { TagModule } from 'primeng/tag';
 import { TimelineModule } from 'primeng/timeline';
 import { TabsModule } from 'primeng/tabs';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { FormsModule } from '@angular/forms';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 interface work {
   name: string;
@@ -19,7 +21,8 @@ interface work {
     TagModule,
     TimelineModule,
     TabsModule,
-    ProgressBarModule
+    ProgressBarModule,
+    FormsModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -76,5 +79,26 @@ export class HomeComponent implements OnInit{
     };
 
     requestAnimationFrame(animate);
+  }
+
+ sendEmail(form: any) {
+    emailjs.send(
+      'service_h7r3nfp',      // Reemplaza con tu Service ID de EmailJS
+      'template_96dil8q',     // Reemplaza con tu Template ID de EmailJS
+      {
+        user_name: form.value.name,
+        user_email: form.value.email,
+        message: form.value.message
+      },
+      'a4cG1cVQdnua50_cQ'       // Reemplaza con tu Public Key de EmailJS
+    ).then(
+      (result: EmailJSResponseStatus) => {
+        alert('Mensaje enviado correctamente');
+        form.resetForm();
+      },
+      (error) => {
+        alert('Error al enviar el mensaje');
+      }
+    );
   }
 }

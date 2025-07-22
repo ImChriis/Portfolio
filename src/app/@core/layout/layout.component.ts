@@ -22,4 +22,12 @@ export class LayoutComponent {
       document.body.classList.remove('dark');
     }
   }
+
+  scrollTo(section: string){
+    const element = document.getElementsByClassName(section)[0];
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
+  

@@ -5,12 +5,12 @@
         </div>
 
         <div class="links">
-            <a>Inicio</a>
-            <a>Proyectos</a>
-            <a>Habilidades</a>
-            <a>Experiencia</a>
-            <a>Contacto</a>
-            
+            <a (click)="scrollTo('welcome')">Inicio</a>
+            <a (click)="scrollTo('projects')">Proyectos</a>
+            <a (click)="scrollTo('panels')">Experiencia</a>
+            <a (click)="scrollTo('techTitle')">Habilidades</a>
+            <a (click)="scrollTo('contact')">Contacto</a>
+
         <div class="options" (click)="toggleTheme()" style="cursor:pointer">
             <i *ngIf="!isDarkMode" class="pi pi-sun"></i>
             <i *ngIf="isDarkMode" class="pi pi-moon"></i>
