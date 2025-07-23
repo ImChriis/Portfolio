@@ -457,12 +457,12 @@
     </div>
   </div>
 
-  <div class="techTitle">
-    <h1>Habilidades</h1>
-  </div>
 
   <div class="tech">
     <div class="tabs">
+           <div class="techTitle">
+        <h1>Habilidades</h1>
+      </div>
       <p-tabs value="0">
         <p-tablist>
           <p-tab value="0">Todas</p-tab>
@@ -775,6 +775,43 @@
   </div>
 
   <div class="contactMe">
-    
+    <form #contactForm="ngForm" (ngSubmit)="sendEmail()">
+      <h1>Enviame un mensaje!</h1>
+      <div class="input-group">
+        <label for="name">Nombre</label>
+        <input pInputText type="text" name="name" ngModel required />
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input pInputText type="email" name="email" ngModel required />
+      </div>
+
+      <div class="input-group">
+        <label for="message">Mensaje</label>
+        <textarea pInputTextarea name="message" ngModel required></textarea>
+      </div>
+
+      <button type="submit" pButton class="btn">Enviar</button>
+    </form>
+
+    <div class="info">
+      <h1>Información de contacto</h1>
+      <p>
+        Si tienes alguna pregunta o deseas discutir un proyecto, no dudes en
+        contactarme a través de los siguientes medios:
+      </p>
+      <div class="email">
+        <i class="pi pi-envelope"></i>
+        <p>christophermedinabarroso&#64;gmail.com</p>
+      </div>
+
+      <div class="phone">
+        <i class="pi pi-phone"></i>
+        <p>+58 4146416366</p>
+      </div>
+
+
+    </div>
   </div>
 </div>

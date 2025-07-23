@@ -1,12 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { TimelineModule } from 'primeng/timeline';
 import { TabsModule } from 'primeng/tabs';
 import { ProgressBarModule } from 'primeng/progressbar';
-import { FormsModule } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { MessageService } from 'primeng/api';
+import { TextareaModule } from 'primeng/textarea';
 
 interface work {
   name: string;
@@ -22,17 +25,23 @@ interface work {
     TimelineModule,
     TabsModule,
     ProgressBarModule,
-    FormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    InputTextModule,
+    TextareaModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit{
-  works!: work[];
-  animatedYears: number = 0;
+  private mescsageService = inject(MessageService);
+  private fb = inject(FormBuilder);
   private targetYears: number = 2;
   private animationDuration: number = 1000;
+  works!: work[];
+  animatedYears: number = 0;
   hasAnimated: boolean = false;
+
 
   @ViewChild('experienceDiv') experienceDiv!: ElementRef;
 
@@ -81,24 +90,22 @@ export class HomeComponent implements OnInit{
     requestAnimationFrame(animate);
   }
 
- sendEmail(form: any) {
-    emailjs.send(
-      'service_h7r3nfp',      // Reemplaza con tu Service ID de EmailJS
-      'template_96dil8q',     // Reemplaza con tu Template ID de EmailJS
-      {
-        user_name: form.value.name,
-        user_email: form.value.email,
-        message: form.value.message
-      },
-      'a4cG1cVQdnua50_cQ'       // Reemplaza con tu Public Key de EmailJS
-    ).then(
-      (result: EmailJSResponseStatus) => {
-        alert('Mensaje enviado correctamente');
-        form.resetForm();
-      },
-      (error) => {
-        alert('Error al enviar el mensaje');
-      }
-    );
-  }
+@ViewChild('contactForm', { read: ElementRef }) contactForm!: ElementRef;
+
+sendEmail() {
+  emailjs.sendForm(
+    'service_h7r3nfp',
+    'template_96dil8q',
+    this.contactForm.nativeElement,
+    'a4cG1cVQdnua50_cQ'
+  ).then(
+    (result: EmailJSResponseStatus) => {
+      this.mescsageService.add({severity:'success', summary: 'Éxito', detail: 'Mensaje enviado correctamente'});
+      this.contactForm.nativeElement.reset();
+    },
+    (error) => {
+      this.mescsageService.add({severity:'error', summary: 'Error', detail: 'Error al enviar el mensaje'});
+    }
+  );
+}
 }

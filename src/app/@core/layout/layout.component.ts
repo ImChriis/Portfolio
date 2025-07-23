@@ -26,7 +26,7 @@ export class LayoutComponent {
   scrollTo(section: string){
     const element = document.getElementsByClassName(section)[0];
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }

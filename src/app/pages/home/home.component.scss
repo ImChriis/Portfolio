@@ -154,6 +154,7 @@ img{
     color: #ffd100;
     font-weight: bold;
     margin-bottom: 0px;
+       text-align: left;
     height: 8%;
 }
 
@@ -161,6 +162,7 @@ img{
     margin-left: 20px;
     text-wrap: balance;
     margin-top: 0px;
+    text-align: left;
     color: var(--text-color);
 }
 
@@ -186,7 +188,7 @@ img{
 
 .panels{
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -258,14 +260,20 @@ img{
 
  .tech{
     width: 80%;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: start;
+    flex-direction: column;
  }
 
  .techTitle{
-    color: var();
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
  }
 
  .tabs{
@@ -310,9 +318,90 @@ img{
     color: var(--text-color);
  }
 
+.contactMe{
+    width: 80%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    border-radius: 20px;
+    border: 1px solid #e7c505;
+}
+
+form{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #e7c505;
+    color: black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.input-group{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label{
+    color: var(--text-color);
+    text-align: left;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 80%;
+     color: black;
+     font-weight: bold;
+}
 
 
+input{
+    height: 5vh;
+    width: 80%;
+}
 
+textarea{
+    height: 20vh;
+    width: 80%;
+    resize: none;
+}
+
+.info{
+    color: var(--text-color);
+}
+
+.email{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.phone{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn{
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
 
 ::ng-deep{
     .p-timeline-event-marker::after{
